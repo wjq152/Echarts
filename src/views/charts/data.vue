@@ -4,11 +4,11 @@
   </div>
 </template>
 
-// <script>
-import Chart from '@/components/Charts/LineMarker'
+<script>
+import Chart from '@/components/Charts/data'
 
 export default {
-  name: 'LineChart',
+  name: 'MixChart',
   components: { Chart }
 }
 </script>

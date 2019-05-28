@@ -22,32 +22,32 @@ export default {
       type: String,
       default: '350px'
     },
-//     autoResize: {
-//       type: Boolean,
-//       default: true
-//     },
-//     chartData: {
-//       type: Object,
-//       required: true
-//     }
+    autoResize: {
+      type: Boolean,
+      default: true
+    },
+    chartData: {
+      type: Object,
+      required: true
+    }
   },
   data() {
     return {
       chart: null
     }
   },
-//   watch: {
-//     chartData: {
-//       deep: true,
-//       handler(val) {
-//         this.setOptions(val)
-//       }
-//     }
-//   },
+  watch: {
+    chartData: {
+      deep: true,
+      handler(val) {
+        this.setOptions(val)
+      }
+    }
+  },
   mounted() {
-    
+    this.$nextTick(() => {
       this.initChart()
-    
+    })
   },
   beforeDestroy() {
     if (!this.chart) {
@@ -58,10 +58,10 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$el)
-    //   this.charts.setOptions(){
-    
-    // setOptions() {
+      this.chart = echarts.init(this.$el, 'macarons')
+      this.setOptions(this.chartData)
+    },
+    setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
         xAxis: {
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -93,9 +93,7 @@ export default {
           data: ['奥迪', '大众']
         },
         series: [{
-          name: '奥迪',
-          data: [100, 120, 161, 134, 105, 160, 165],
-          itemStyle: {
+          name: '奥迪', itemStyle: {
             normal: {
               color: '#FF005A',
               lineStyle: {
@@ -106,13 +104,12 @@ export default {
           },
           smooth: true,
           type: 'line',
-        //   data: expectedData,
+          data: expectedData,
           animationDuration: 2800,
           animationEasing: 'cubicInOut'
         },
         {
           name: '大众',
-          data:[120, 82, 91, 154, 162, 140, 145],
           smooth: true,
           type: 'line',
           itemStyle: {         //折线图圆点样式
@@ -127,7 +124,7 @@ export default {
               }
             }
           },
-        //   data: actualData,
+          data: actualData,
           animationDuration: 2800,//动画延迟时间
           animationEasing: 'quadraticOut'//动画特效
         }]

@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: String,
-      default: '300px'
+      default: '314px'
     }
   },
   data() {
@@ -55,14 +55,14 @@ export default {
         },
         grid: {
           top: 10,
-          left: '2%',
+          left: '0%',
           right: '2%',
-          bottom: '3%',
+          bottom: '0%',
           containLabel: true
         },
         xAxis: [{
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['软件开发', '图片租赁', '采购', '运输', '软件服务','运输费用','视频制作','动画制作','快递','制作'],
           axisTick: {
             alignWithLabel: true
           }
@@ -74,25 +74,25 @@ export default {
           }
         }],
         series: [{
-          name: 'pageA',
+          name: '预付款第一笔',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [79, 52, 200, 334, 390, 330, 220],
+          data: [79, 52, 200, 334, 390, 330, 220,350,250,600],
           animationDuration
         }, {
-          name: 'pageB',
+          name: '预付款第二笔',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [80, 52, 200, 334, 390, 330, 220],
+          data: [80, 52, 200, 334, 390, 330, 220,200,350,380],
           animationDuration
         }, {
-          name: 'pageC',
+          name: '尾款',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [30, 52, 200, 334, 390, 330, 220],
+          data: [30, 52, 200, 334, 390, 330, 220,580,200,360],
           animationDuration
         }]
       })

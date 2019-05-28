@@ -52,21 +52,26 @@ export default {
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Industries', 'Technology', 'Forex', 'Gold', 'Forecasts']
+          data: ['软件开发', '图片租赁', '采购', '运输', '软件服务','运输费用','视频制作','动画制作','快递','制作']
         },
         series: [
           {
-            name: 'WEEKLY WRITE ARTICLES',
+            name: '合同总金额',
             type: 'pie',
             roseType: 'radius',
             radius: [15, 95],
             center: ['50%', '38%'],
             data: [
-              { value: 320, name: 'Industries' },
-              { value: 240, name: 'Technology' },
-              { value: 149, name: 'Forex' },
-              { value: 100, name: 'Gold' },
-              { value: 59, name: 'Forecasts' }
+              { value: 25000, name: '软件开发' },
+              { value: 25000, name: '图片租赁' },
+              { value: 180000, name: '采购' },
+              { value: 250, name: '运输' },
+              { value: 4759, name: '软件服务' },
+              { value: 138, name: '运输费用' },
+              { value: 27000, name: '视频制作' },
+              { value: 40200, name: '动画制作' },
+              { value: 23, name: '快递' },
+              { value: 12325, name: '制作' },
             ],
             animationEasing: 'cubicInOut',
             animationDuration: 2600
